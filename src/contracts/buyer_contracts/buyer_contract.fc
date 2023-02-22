@@ -1,0 +1,56 @@
+#include "../lib/stdlib.fc";
+
+;; =============== storage =============================
+
+(slice, int) load_data() inline {
+  var ds = get_data().begin_parse();
+  slice addr = ds~load_msg_addr();
+  int time = ds~load_uint(64);
+  return (addr, time);
+}
+
+() save_data(slice addr, int time) impure inline {
+  set_data(begin_cell()
+    .store_slice(addr)
+    .store_uint(time, 64)
+    .end_cell());
+}
+
+;; =============== messages =============================
+
+() recv_internal(slice in_msg_body) impure {
+  if (in_msg_body.slice_empty?()) { 
+    return (); 
+  }
+  slice seller_addr = in_msg_body~load_msg_addr();
+  (slice LUCIA_addr, int time) = load_data();
+  ;; slice buyer_addr = my_address();
+
+  int amount = in_msg_body~load_uint(64);
+  int fee = in_msg_body~load_uint(64);
+  int LUCIA_amount = muldiv(amount, fee, 100000000);
+  int seller_amount = amount - LUCIA_amount;
+
+  cell seller_msg = begin_cell()
+                    .store_uint(0x18, 6)
+                    .store_slice(seller_addr)
+                    .store_coins(seller_amount)
+                    .store_uint(0, 1 + 4 + 4 + 64 + 32 + 1 + 1)
+                  .end_cell();
+  cell LUCIA_msg = begin_cell()
+                    .store_uint(0x18, 6)
+                    .store_slice(LUCIA_addr)
+                    .store_coins(LUCIA_amount)
+                    .store_uint(0, 1 + 4 + 4 + 64 + 32 + 1 + 1)
+                  .end_cell();
+
+  send_raw_message(seller_msg, 3);
+  send_raw_message(LUCIA_msg, 3);
+}
+
+;; =============== getters =============================
+
+(slice, int) getter() method_id {
+  (slice addr, int time) = load_data();
+  return (addr, time);
+}
