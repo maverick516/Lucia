@@ -19,8 +19,8 @@ async function deploy_collection() {
   }
 
   // prepare nft_collection's initial code and data cells for deployment
-  const collectionCode = Cell.fromBoc(fs.readFileSync("contracts/nft_collection.cell"))[0];
-  const nftCode = Cell.fromBoc(fs.readFileSync("contracts/nft_item.cell"))[0];
+  const collectionCode = Cell.fromBoc(fs.readFileSync("contracts/seller_contracts/nft_collection.cell"))[0];
+  const nftCode = Cell.fromBoc(fs.readFileSync("contracts/seller_contracts/nft_item.cell"))[0];
 
   const contentParams = {
     collectionContentUri: 'https://nftstorage.link/ipfs/bafybeicgk75g5yar37dbetfrxovzqoflzgis7obbltnqx2tqvcp3jegh5u/collection.json',

@@ -22,9 +22,17 @@ export function useCollectionDeployNft(sender: Sender) {
   // BuyerContract sendMoney 기능 사용
   const collectionContract = useCollectionContract();
 
+  var next_nft_idx = 0;
+  var owner_address: Address;
+
+  collectionContract?.get_collection_data().then((response) => {
+    next_nft_idx = response.next_nft_idx;
+    owner_address = response.owner_address;
+  })
+
   return {
-    deployNft: (item_index: number, amount: string, content: string, owner_addr: Address) => {
-      return collectionContract?.sendDeployNft(sender, item_index, amount, content, owner_addr);
+    deployNft: (amount: string, content: string) => {
+      return collectionContract?.sendDeployNft(sender, next_nft_idx, amount, content, owner_address);
     },
   };
 }

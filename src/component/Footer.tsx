@@ -5,6 +5,7 @@ import "../App.css";
 import Home from "../assets/Menu.svg";
 import Kie from "../assets/Kie.svg";
 import Setting from "../assets/Setting.svg";
+import { Link } from "react-router-dom";
 
 export default function LabelBottomNavigation() {
   const [value, setValue] = React.useState("recents");
@@ -12,7 +13,6 @@ export default function LabelBottomNavigation() {
   const handleChange = (event: React.SyntheticEvent, newValue: string) => {
     setValue(newValue);
   };
-
   return (
     <BottomNavigation
       className={"Footer"}
@@ -23,7 +23,9 @@ export default function LabelBottomNavigation() {
         label="HOME"
         value="recents"
         icon={<img src={Home} />}
-      />
+        component={Link}
+        to="/Lucia-page/main"
+      ></BottomNavigationAction>
       <BottomNavigationAction
         label="KIE-VERSE"
         value="favorites"

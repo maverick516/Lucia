@@ -1,14 +1,212 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Roboto:ital,wght@1,100&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:ital,wght@1,100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&family=Quicksand:wght@500&display=swap');
+
 #root {
   text-align: center;
+}
+
+.text-Q4 {
+  font-family: 'Quicksand';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  /* identical to box height */
+  letter-spacing: 0.005em;
+  color: #363853;
+}
+
+.text {
+  color: white;
+}
+
+.btn {
+  background: linear-gradient(180deg, #64BCFB 0%, rgba(5, 0, 255, 0.5) 100%);
+  border-radius: 15px !important;
+  width: 133px;
+  height: 36px;
+  color: white;
 }
 
 a {
   font-family: 'Poppins';
   font-size: 0.7rem;
 }
-/*mainLogo  */
+
+/* Select btn */
+.select-text {
+  font-family: 'Noto Sans KR'!important;
+  font-style: normal!important;
+  font-weight: 700!important;
+  font-size: 15px!important;
+  line-height: 22px!important;
+}
+/* end */
+
+/* T-history */
+.TH-Header {
+        width: 100%;
+        height: 50px;
+        font-size: 50px;
+}
+
+.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.MuiSelect-select {
+    padding: 0;
+    border: 0;
+}
+/* end */
+
+/* Modal */
+.modal-bg {
+  background: #FFFFFF;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 18px;
+}
+
+.MuiModal-root {
+  opacity: 0.9;
+  background-color: white;
+}
+
+.css-sox5kk-MuiBackdrop-root  {
+  background-color: white !important;
+}
+/* end */
+
+/* sub-Seller */
+.subTitle {
+  font-family: 'Quicksand';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 30px;
+  margin-top: 50px;
+}
+
+.subBalance {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 60px;
+  text-align: center;
+}
+
+.SellBox {
+  margin-top: 40px;
+  padding: 30px 15px;
+  height: 180px;
+}
+
+.SellInput {
+  margin-top: 20px;
+  background: #F2F2F2;
+  border-radius: 20px;
+  width: 100%;
+  height: 39px;
+}
+
+#outlined-multiline-flexible {
+  text-align: center;
+}
+
+.css-dpjnhs-MuiInputBase-root-MuiOutlinedInput-root {
+  padding: 8px !important;
+}
+
+.MuiOutlinedInput {
+  padding: 8px !important;
+}
+
+.MuiOutlinedInput-notchedOutline {
+  border: 0 !important;
+}
+
+.SliderBox {
+  margin: 0;
+}
+
+.SellBG {
+  margin: 0 auto;
+  width: 250px;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 18px;
+  height: 180px;
+}
+/* end */
+
+/* Buyer Modal */
+.Buyer-Modal {
+  padding: 35px 0;
+  text-align: center;
+}
+/* end */
+
+/* sellList */
+.list-box {
+    width: 270px;
+    height: 215px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    background: #FBFBFB;
+}
+
+.Grid-text {
+      padding: 10px 10px;
+      text-align: start;
+}
+
+.container-mi {
+  padding: 10px 0;
+  margin-top: 10px;
+  font-size: 12px;
+  justify-content: space-between;
+  background: #FFFFFF;
+  opacity: 0.9;
+  box-shadow: 0px 30px 50px rgba(155, 155, 155, 0.1);
+  border-radius: 20px;
+}
+
+.Money {
+  background: #ECECEC;
+  border-radius: 20px;
+}
+/* end */
+
+/* SellHistoryBox */
+.SHB {
+  width: 270px;
+  height: 400px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  background: #FBFBFB;
+}
+/* end */
+
+/* slider */
+.MuiSlider-thumb {
+  color: #4772c4;
+  width: 15px;
+  height: 15px;
+}
+
+.MuiSlider-track {
+  color: #4772c4;
+}
+
+.MuiSlider-mark {
+  color : white;
+}
+
+.MuiSlider-rail {
+  color: #4772c4;
+}
+/* end */
+
+/* mainLogo */
 .Loginbg {
   background: white;
   box-shadow: 10px 20px 50px rgba(138, 18, 156, 0.08);
@@ -29,19 +227,19 @@ a {
   will-change: filter;
   transition: filter 300ms;
 }
-/*  */
 
 .btnText2 {
   font-family: 'Poppins';
   text-align: end;
+  margin-top: 5px;
 }
-
 
 .box {
   text-align: center;
   width: 100%;
   height: 150px;
 }
+
 .boxTitle {
   font-family: 'Poppins', sans-serif;
   text-align: start;
@@ -52,6 +250,7 @@ a {
   font-size: 14px;
   line-height: 21px;
 }
+
 .secondBox {
   width: 230px;
   height: 70px;
@@ -59,6 +258,10 @@ a {
   box-shadow: 0px 3px 39px rgba(0, 0, 0, 0.25);
   border-radius: 20px;
   z-index: 100;
+}
+
+.secondBoxCopy {
+  margin-top: 70px;
 }
 
 .btncti {
@@ -75,6 +278,7 @@ a {
 .boxImg {
   padding: 5px 20px;
 }
+
 .boxImgbtn {
   padding: 10px 0;
   width: 100%;
@@ -100,7 +304,6 @@ span {
   width: 310px;
 }
 
-
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -117,6 +320,7 @@ span {
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
@@ -150,6 +354,7 @@ a {
   letter-spacing: 0.005em;
   color: #BDBDBD;
 }
+
 .TransactionDeli{
   font-family: 'Rubik';
   font-style: normal;

@@ -1,15 +1,16 @@
 import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemText from "@mui/material/ListItemText";
-import ListSubheader from "@mui/material/ListSubheader";
+import { Box, Grid } from "@mui/material";
 
-export default function PinnedSubheaderList() {
+export default function PinnedSubheaderList(props: any) {
+  const list = props.list;
+  // console.log(list[0]);
+  
   return (
     <List
       sx={{
         width: "100%",
         maxWidth: 360,
-        bgcolor: "background.paper",
+        backgroundColor: "#FBFBFB",
         position: "relative",
         overflow: "auto",
         maxHeight: 300,
@@ -17,18 +18,34 @@ export default function PinnedSubheaderList() {
       }}
       subheader={<li />}
     >
-      {[0, 1, 2, 3, 4].map((sectionId) => (
-        <li key={`section-${sectionId}`}>
-          <ul>
-            <ListSubheader>{`I'm sticky ${sectionId}`}</ListSubheader>
-            {[0, 1, 2].map((item) => (
-              <ListItem key={`item-${sectionId}-${item}`}>
-                <ListItemText primary={`Item ${item}`} />
-              </ListItem>
-            ))}
-          </ul>
-        </li>
-      ))}
+      <li>
+        <ul>
+          {list &&
+            <Box className={"list-box"}>
+              {list?.map((item: any) => (
+                <Grid
+                  key={`event-${ item.idx }`}
+                  container
+                  className={"container-mi"}
+                >
+                  <Grid item xs={7} className={"Grid-text"}>
+                    <span style={{ marginLeft: "5px" }}>{ item.company }</span>
+                  </Grid>
+                  <Grid
+                    item
+                    xs={4}
+                    style={{ padding: "10px 0px", marginRight: "10px" }}
+                  >
+                    <Grid className={"Money"}>
+                      <span style={{ marginRight: "5px" }}>-1,000원</span>
+                    </Grid>
+                  </Grid>
+                </Grid>
+              ))}
+            </Box>
+          }
+        </ul>
+      </li>
     </List>
   );
 }
