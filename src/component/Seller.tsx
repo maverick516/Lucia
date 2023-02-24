@@ -19,7 +19,7 @@ export default function Seller(props: any) {
 
   const [value, setValue] = useState(0);
 
-  const nftButton = useCollectionDeployNft(props.connection.sender).deployNft;
+  const nftButton = useCollectionDeployNft(props.connection).deployNft;
 
   const energy = battery.props.children.props.level * 100 * 6;
   const energy_max = Math.floor(energy / 100) * 100;

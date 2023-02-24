@@ -24,8 +24,8 @@ async function deploy_collection() {
   // const nftCode = Cell.fromBoc(Buffer.from(JSON.parse(fs.readFileSync("contracts/seller_contracts/nft-item.compiled.json").toString()).hex, "hex"))[0];
 
   const contentParams = {
-    collectionContentUri: 'https://bafybeigdpncziof3h6mue3e253ysxbonenjaj3x6ml4ytxjxo46kasfmcu.ipfs.nftstorage.link/collection.json',
-    nftItemContentBaseUri: 'https://bafybeigdpncziof3h6mue3e253ysxbonenjaj3x6ml4ytxjxo46kasfmcu.ipfs.nftstorage.link/',
+    collectionContentUri: 'https://bafybeibcdk7vxzmxzwmvbcaqalrsv7qzw72yhwlfebjdesf5gctmpwwe7y.ipfs.nftstorage.link/collection.json',
+    nftItemContentBaseUri: 'https://bafybeibcdk7vxzmxzwmvbcaqalrsv7qzw72yhwlfebjdesf5gctmpwwe7y.ipfs.nftstorage.link/',
   }
 
   const RoyaltyParams = {

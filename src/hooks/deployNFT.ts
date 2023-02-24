@@ -3,7 +3,7 @@ import { useTonClient } from "./useTonClient";
 import { useAsyncInitialize } from "./useAsyncInitialize";
 import NFT_collection from "../contracts/seller_contracts/NFT_collection_contract";
 
-const contractAddress = "EQBpmnvaRVRMraFQFf1SqWBRzkDqF0yexrPTsY4OuyzTPbzr";
+const contractAddress = "EQDS5XIzwLW89qLjZZ6IHWek6sPTfcWLo0tfjBRAa6h4TQBq";
 
 function useCollectionContract() {
   // BuyerContract 연결
@@ -18,7 +18,7 @@ function useCollectionContract() {
   }, [client]);
 }
 
-export function useCollectionDeployNft(sender: Sender) {
+export function useCollectionDeployNft(connection: any) {
   // BuyerContract sendMoney 기능 사용
   // console.log(sender);
   const collectionContract = useCollectionContract();
@@ -29,12 +29,15 @@ export function useCollectionDeployNft(sender: Sender) {
   collectionContract?.get_collection_data().then((response) => {
     next_nft_idx = response.next_nft_idx;
     owner_address = response.owner_address;
+    console.log(owner_address);
   });
-  // console.log(next_nft_idx);
+  // if(connection.address) {
+  //   console.log(Address.parse(connection.address));
+  // }
 
   return {
     deployNft: (amount: string, content: string) => {
-      return collectionContract?.sendDeployNft(sender, next_nft_idx, amount, content, owner_address);
+      return collectionContract?.sendDeployNft(connection.sender, next_nft_idx, amount, content, owner_address);
     },
   };
 }
