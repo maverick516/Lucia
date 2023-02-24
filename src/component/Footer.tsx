@@ -40,6 +40,8 @@ export default function LabelBottomNavigation() {
             }}
           />
         }
+        component={Link}
+        to="/Lucia-page/Kieverse"
       />
       <BottomNavigationAction
         label="SETTING"

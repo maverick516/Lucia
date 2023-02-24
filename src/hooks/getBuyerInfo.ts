@@ -8,7 +8,7 @@ export function getBuyerInfo() {
     axios.get('http://localhost:3001/')
       .then(response => {
         setList(response.data);
-        console.log(response.data);
+        // console.log(response.data);
       });
   }, []);
 

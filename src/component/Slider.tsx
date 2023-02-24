@@ -1,14 +1,27 @@
 import Box from "@mui/material/Box";
 import Slider from "@mui/material/Slider";
 
-function valuetext(value: number) {
-  return `${value}°C`;
-}
+export default function DiscreteSlider(props: any) {
+  const setValue = props.setVal;
+  const value = props.val;
+  const max = props.max ? props.max : 700;
 
-export default function DiscreteSlider() {
+  const handleChange = (event: any, newValue: any) => {
+    setValue(newValue);
+    // console.log(event);
+  };
+
   return (
     <Box sx={{ padding: "10px 10px" }}>
-      <Slider defaultValue={30} step={10} marks min={10} max={100} />
+      <Slider
+        key={`slider-${value}`}
+        defaultValue={value}
+        step={100}
+        marks
+        min={0}
+        max={max}
+        onChangeCommitted={handleChange}
+      />
     </Box>
   );
 }

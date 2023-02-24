@@ -2,7 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:ital,wght@1,100&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&family=Quicksand:wght@500&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&family=Quicksand:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&family=Poppins&family=Quicksand:wght@500&display=swap');
 #root {
   text-align: center;
 }
@@ -60,20 +61,28 @@ a {
 
 /* Modal */
 .modal-bg {
-  background: #FFFFFF;
+  background: white;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 18px;
+  opacity: 1;
 }
 
-.MuiModal-root {
-  opacity: 0.9;
-  background-color: white;
-}
+
 
 .css-sox5kk-MuiBackdrop-root  {
   background-color: white !important;
+  opacity: 0.7!important;
 }
 /* end */
+
+
+
+.css-nnid7-MuiSlider-valueLabel > span > span {
+  color: white;
+}
+
+
+
 
 /* sub-Seller */
 .subTitle {
@@ -144,6 +153,300 @@ a {
   text-align: center;
 }
 /* end */
+
+/* LockNFT */
+
+.lock-history {
+  width: 100%;
+  height: 180px;
+  background: #FBFBFB;
+  border-radius: 30px 30px 0px 0px;
+  margin-top: -80px;
+  height: 430px;
+}
+
+
+.lock-box {
+    width: 120px;
+    height: 120px;
+    left: 23px;
+    top: 257px;
+    margin: auto;
+    margin-top: 15px;
+    text-align: start;
+  
+    background: linear-gradient(73.45deg, #FF6826 -1.93%, #FFB74B 31.98%, #E2A6FF 69.06%, #5757F0 103.07%);
+    border-radius: 16px;
+}
+
+.token-bg{
+  padding: 10px;
+}
+
+.token-text {
+  padding: 0 10px;
+  line-height: 20px;
+  color: white;
+}
+
+.token-text1 {
+  padding: 0 10px;
+  line-height: 20px;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 21px;
+  color: white;
+}
+
+.token-text2 {
+  padding: 0 10px;
+  line-height: 20px;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 27px;
+  color: white;
+}
+
+
+
+.Lock-text1 {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 22px;
+  color: #130138;
+}
+
+.Lock-text2 {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 10px;
+  line-height: 17px;
+
+  color: #130138;
+}
+
+
+/* END */
+
+
+/* Kieverse */
+
+.kie-history {
+  width: 100%;
+  height: 180px;
+  background: #FBFBFB;
+  border-radius: 30px 30px 0px 0px;
+  margin-top: -80px;
+  height: 430px;
+}
+
+.kie-box {
+  width: 120px;
+  height: 151px;
+  left: 23px;
+  top: 257px;
+  margin: auto;
+  margin-top: 15px;
+  text-align: start;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+}
+
+.kie-bg {
+  padding: 10px 35px 5px 35px;
+}
+
+.kie-text {
+  padding: 0 10px;
+  line-height: 20px;
+  color: white;
+}
+
+.kie-sub-text1 {
+  padding: 0 10px;
+  line-height: 20px;
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 22px;
+  text-align: center;
+  color: #000000;
+}
+
+.kie-sub-text2 {
+  line-height: 20px;
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px!important;
+  line-height: 17px;
+  color: black;
+  padding: 0;
+}
+
+
+
+.kie-text1 {
+  font-family: 'Quicksand';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 25px;
+  text-align: center;
+}
+
+.kie-text2 {
+  padding:5px;
+  font-family: 'Quicksand';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px !important;
+  line-height: 15px;
+  text-align: center;
+
+  color: #000000;
+}
+
+.kie-button {
+  flex-direction: column !important;
+  color: black!important;
+  font-weight: 0!important;
+  font-size: 0rem!important;
+  line-height: 0!important;
+  padding: 0!important;
+  height: 150px;
+}
+
+
+/* END */
+
+
+
+/* Kiemecs */
+
+.kiemecs-history {
+  width: 100%;
+  height: 180px;
+  background: #FBFBFB;
+  border-radius: 30px 30px 0px 0px;
+  margin-top: -50px;
+  height: 400px;
+}
+
+.boxKiemecs {
+  text-align: center;
+  font-family: 'Quicksand';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 50px;
+  color: white;
+}
+
+.kiemecs-box {
+  width: 120px;
+  height: 151px;
+  left: 23px;
+  top: 257px;
+  margin: auto;
+  margin-top: 15px;
+  text-align: start;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+}
+
+.kiemecs-bg {
+  padding: 10px 35px 5px 35px;
+}
+
+.kiemecs-text {
+  padding: 0 10px;
+  line-height: 20px;
+  color: white;
+}
+
+.kiemecs-sub-text1 {
+  padding: 0 10px;
+  line-height: 20px;
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 22px;
+  text-align: center;
+  color: #000000;
+}
+
+.kiemecs-sub-text2 {
+  line-height: 20px;
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px !important;
+  line-height: 17px;
+  color: black;
+  padding: 0;
+}
+
+
+
+.kiemecs-text1 {
+  font-family: 'Quicksand';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 25px;
+  text-align: center;
+}
+
+.kiemecs-text2 {
+  padding: 5px;
+  font-family: 'Quicksand';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px !important;
+  line-height: 15px;
+  text-align: center;
+
+  color: #000000;
+}
+
+.kiemecs-button {
+  flex-direction: column !important;
+  color: black !important;
+  font-weight: 0 !important;
+  font-size: 0rem !important;
+  line-height: 0 !important;
+  padding: 0 !important;
+  height: 150px;
+}
+
+
+.kiemecsMQ{
+  font-family: 'Quicksand';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  letter-spacing: 0.005em;
+  color: #828282;
+}
+
+
+/* END */
+
+
 
 /* sellList */
 .list-box {

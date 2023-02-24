@@ -10,7 +10,9 @@ import "../index.css";
 import { useTonClient } from "../hooks/useTonClient";
 import { getBalance } from "../hooks/getBalance";
 import { fromNano } from "ton-core";
-import getTransactionsHistory, { transactions } from "../hooks/getTransactionsHistory";
+import getTransactionsHistory, {
+  transactions,
+} from "../hooks/getTransactionsHistory";
 import { useCollectionDeployNft } from "../hooks/deployNFT";
 import { Link } from "react-router-dom";
 
@@ -21,29 +23,30 @@ export default function main(props: any) {
 
   //잔고 조회
   const balance_bigint = getBalance(client, user_address);
-  const balance = (balance_bigint ? fromNano(balance_bigint) : '0');
+  const balance = balance_bigint ? fromNano(balance_bigint) : "0";
 
   // 트랜젝션 목록 조회
   const history = getTransactionsHistory(user_address, 5);
   // console.log(history);
   // (new Date(transaction_info.now * 1000)).toISOString()
 
-  const nftButton = useCollectionDeployNft(props.connection.sender).deployNft;
-
   return (
     <>
       <div className={"Container"}>
+        <Box style={{ textAlign: "right" }}>
+          <button onClick={() => props.connection.disconnect.disconnection()}>
+            disconnect
+          </button>
+        </Box>
         <Box className={"box"}>
           <img className={"logoLucia"} src={Logo} />
           <Box className={"boxTitle"}>Available Balance</Box>
-          <Box className={"boxBalance"}>
-            {balance} TON
-          </Box>
+          <Box className={"boxBalance"}>{balance} TON</Box>
         </Box>
         <Box className={"secondBox"}>
           <Grid container className={"btncti"}>
             <Grid item xs={4}>
-              <Link to="/Lucia-page/Seller">
+              <Link to="/Lucia-page/Seller" style={{ textDecoration: "none" }}>
                 <Button className={"btnLine"}>
                   <Box>
                     <img src={Sell}></img>
@@ -53,7 +56,7 @@ export default function main(props: any) {
               </Link>
             </Grid>
             <Grid item xs={4}>
-              <Link to="/Lucia-page/Buyer">
+              <Link to="/Lucia-page/Buyer" style={{ textDecoration: "none" }}>
                 <Button className={"btnLine"}>
                   <Box>
                     <img src={Buy}></img>
@@ -63,11 +66,11 @@ export default function main(props: any) {
               </Link>
             </Grid>
             <Grid item xs={4}>
-              <Link to="#">
+              <Link to="/Lucia-page/LockNFT" style={{ textDecoration: "none" }}>
                 <Button className={"btnLine"}>
                   <Box>
                     <img src={Register}></img>
-                    <Box className={"btnText"}>Prepare</Box>
+                    <Box className={"btnText"}>Mediator</Box>
                   </Box>
                 </Button>
               </Link>
@@ -78,88 +81,59 @@ export default function main(props: any) {
           <Box className={"TransactionBg"}>
             <Grid
               container
-              style={{ justifyContent: "space-between", textAlign: "start" }}
+              style={{ justifyContent: "space-between", textAlign: "center" }}
             >
-              <Grid item xs={9} className={"TransactionTitle"}>
+              <Grid
+                item
+                xs={9}
+                className={"TransactionTitle"}
+                style={{ maxWidth: "69%" }}
+              >
                 Transaction History
               </Grid>
               <Grid item xs={3} className={"btnText2"}>
-                <Link to="/Lucia-page/TradeHistory">
+                <Link
+                  to="/Lucia-page/TradeHistory"
+                  style={{ textDecoration: "none" }}
+                >
                   View All
                 </Link>
               </Grid>
             </Grid>
             <Box className={"TransH"}>
-
               {history.map((transaction: transactions) => (
                 <Grid
-                key={`event-${ transaction.hash }`}
-                container
-                style={{
-                  justifyContent: "space-between",
-                  textAlign: "start",
-                }}
+                  key={`event-${transaction.hash}`}
+                  container
+                  style={{
+                    justifyContent: "space-between",
+                    textAlign: "center",
+                  }}
                 >
                   <Grid item xs={8} className={"TransactionDeli"}>
-                    { (transaction.dir == 'in' ? transaction.from : transaction.to).slice(0, 15) + '...' }
+                    {(transaction.dir == "in"
+                      ? transaction.from
+                      : transaction.to
+                    ).slice(0, 15) + "..."}
                     <Grid className={"TransactionDate"}>
-                      { (new Date(Number(transaction.utime) * 1000)).toISOString() }
+                      {new Date(Number(transaction.utime) * 1000).toISOString()}
                     </Grid>
                   </Grid>
                   <Grid item xs={3}>
-                    <Box className={"TransactionPrice"}>{ fromNano(transaction.value) } TON</Box>
+                    <Box
+                      className={"TransactionPrice"}
+                      style={{ fontSize: "12px" }}
+                    >
+                      {fromNano(transaction.value)}
+                      <br></br> <span style={{ color: "#BDBDBD" }}>TON</span>
+                    </Box>
                   </Grid>
                 </Grid>
               ))}
-
             </Box>
           </Box>
           {/* <Storystyle /> */}
         </Box>
-      </div>
-      <div style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center"
-        }}
-      >
-        <button
-          onClick={() => props.connection.disconnect.disconnection()}
-        >
-          disconnect
-        </button>
-
-        <button
-          onClick={() => {nftButton('0.05', '0.json')}}
-        >
-          mint 100 KwhNFT
-        </button>
-        <button
-          onClick={() => {nftButton('0.05', '1.json')}}
-        >
-          mint 200 KwhNFT
-        </button>
-        <button
-          onClick={() => {nftButton('0.05', '2.json')}}
-        >
-          mint 300 KwhNFT
-        </button>
-        <button
-          onClick={() => {nftButton('0.05', '3.json')}}
-        >
-          mint 400 KwhNFT
-        </button>
-        <button
-          onClick={() => {nftButton('0.05', '4.json')}}
-        >
-          mint 500 KwhNFT
-        </button>
-
-        {/* <button
-          onClick={() => {nftButton(2, '0.05', '0.json', Address.parse('kQBSyOm_TRolv4vJTgjQrwXAkzjGQ-5zyYQd2gdiAZTLq6OT'))}}
-        >
-          nft
-        </button> */}
       </div>
       <div className={"FooterC"}>
         <Footer />

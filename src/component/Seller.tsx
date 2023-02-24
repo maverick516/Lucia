@@ -6,9 +6,25 @@ import "../index.css";
 import Slider from "./Slider";
 import TextInput from "./TextInput";
 import { Link } from "react-router-dom";
-import { getBuyerList } from "../hooks/getBuyerInfo";
+import BatteryStatus from "./BatteryStatus";
+import { useCollectionDeployNft } from "../hooks/deployNFT";
+import { useTonClient } from "../hooks/useTonClient";
+import { fromNano } from "ton-core";
+import { getBalance } from "../hooks/getBalance";
+import main from "./main";
+import { useEffect, useState } from "react";
 
-export default function Seller() {  
+export default function Seller(props: any) {
+  var battery = BatteryStatus();
+
+  const [value, setValue] = useState(0);
+
+  const nftButton = useCollectionDeployNft(props.connection.sender).deployNft;
+
+  const energy = battery.props.children.props.level * 100 * 6;
+  const energy_max = Math.floor(energy / 100) * 100;
+  const nft = value / 100 - 1;
+  // console.log(nft);
   return (
     <>
       <div className={"Container"}>
@@ -26,7 +42,7 @@ export default function Seller() {
             Your Generated Amount
           </Box>
           <Box className={"subBalance"} style={{ color: "white" }}>
-            547.54 kWh LUX
+            {battery.props.children.props.level * 100 * 6} kWh LUX
           </Box>
         </Box>
         <Box className={"secondBoxCopy"}></Box>
@@ -34,18 +50,31 @@ export default function Seller() {
           <Box className={"SellBG"}>
             <Box className={"SellBox"}>
               <Box className={"text-Q4"}>Your Required Amount</Box>
-              <TextInput />
-              <Slider />
+              <TextInput val={value} />
+              <Slider setVal={setValue} val={value} max={energy_max} />
             </Box>
+            {energy >= value ? (
+              <Button
+                className={"btn"}
+                style={{ marginTop: "30px" }}
+                onClick={() => {
+                  nftButton("0.05", { nft } + ".json");
+                }}
+              >
+                <span className={"text"}> {value} kWh</span>
+              </Button>
+            ) : (
+              <Button
+                className={"btn"}
+                style={{ marginTop: "30px" }}
+                onClick={() => {
+                  nftButton("0.05", { nft } + ".json");
+                }}
+              >
+                <span className={"text"}> 700 kWh</span>
+              </Button>
+            )}
           </Box>
-          <Button
-            className={"btn"}
-            style={{ marginTop: "30px" }}
-            component={Link}
-            to="/Lucia-page/SellList"
-          >
-            <span className={"text"}>Next</span>
-          </Button>
         </Box>
       </div>
       <div className={"FooterC"}>

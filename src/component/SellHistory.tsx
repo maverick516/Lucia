@@ -35,10 +35,10 @@ export default class TradeHistory extends Component {
                 padding: "0px 35px 0 30px",
               }}
             >
-              <Grid xs={9} className={"TransactionTitle"}>
+              <Grid item xs={9} className={"TransactionTitle"}>
                 <Select />
               </Grid>
-              <Grid xs={3} className={"btnText2"}>
+              <Grid item xs={3} className={"btnText2"}>
                 <Link to="/Lucia-page/TradeHistory">View All</Link>
               </Grid>
             </Grid>

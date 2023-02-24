@@ -17,14 +17,15 @@ async function deploy_collection() {
   if (!await client.isContractDeployed(wallet.address)) {
     return console.log("wallet is not deployed");
   }
-
+  
   // prepare nft_collection's initial code and data cells for deployment
   const collectionCode = Cell.fromBoc(fs.readFileSync("contracts/seller_contracts/nft_collection.cell"))[0];
   const nftCode = Cell.fromBoc(fs.readFileSync("contracts/seller_contracts/nft_item.cell"))[0];
+  // const nftCode = Cell.fromBoc(Buffer.from(JSON.parse(fs.readFileSync("contracts/seller_contracts/nft-item.compiled.json").toString()).hex, "hex"))[0];
 
   const contentParams = {
-    collectionContentUri: 'https://nftstorage.link/ipfs/bafybeicgk75g5yar37dbetfrxovzqoflzgis7obbltnqx2tqvcp3jegh5u/collection.json',
-    nftItemContentBaseUri: 'https://nftstorage.link/ipfs/bafybeicgk75g5yar37dbetfrxovzqoflzgis7obbltnqx2tqvcp3jegh5u/',
+    collectionContentUri: 'https://bafybeigdpncziof3h6mue3e253ysxbonenjaj3x6ml4ytxjxo46kasfmcu.ipfs.nftstorage.link/collection.json',
+    nftItemContentBaseUri: 'https://bafybeigdpncziof3h6mue3e253ysxbonenjaj3x6ml4ytxjxo46kasfmcu.ipfs.nftstorage.link/',
   }
 
   const RoyaltyParams = {
@@ -34,7 +35,6 @@ async function deploy_collection() {
 
   const content = createContentCell(contentParams);
   const royalty_params = createRoyaltyCell(RoyaltyParams);
-  
 
   const nft_collection = NFT_collection.createForDeploy(collectionCode, wallet.address, 0, content, nftCode, royalty_params);
   

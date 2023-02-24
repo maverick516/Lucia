@@ -26,10 +26,11 @@ export default function PinnedSubheaderList() {
             {[0].map((item) => (
               <Box className={"SHB"}>
                 <Grid container className={"container-mi"}>
-                  <Grid xs={7} className={"Grid-text"}>
+                  <Grid item xs={7} className={"Grid-text"}>
                     <span style={{ marginLeft: "5px" }}>DAEGU LLC</span>
                   </Grid>
                   <Grid
+                    item
                     xs={4}
                     style={{ padding: "10px 0px", marginRight: "10px" }}
                   >
@@ -39,10 +40,11 @@ export default function PinnedSubheaderList() {
                   </Grid>
                 </Grid>
                 <Grid container className={"container-mi"}>
-                  <Grid xs={7} className={"Grid-text"}>
+                  <Grid item xs={7} className={"Grid-text"}>
                     <span style={{ marginLeft: "5px" }}>Smart Factory LLC</span>
                   </Grid>
                   <Grid
+                    item
                     xs={4}
                     style={{ padding: "10px 10px", marginRight: "10px" }}
                   >
@@ -52,10 +54,11 @@ export default function PinnedSubheaderList() {
                   </Grid>
                 </Grid>
                 <Grid container className={"container-mi"}>
-                  <Grid xs={7} className={"Grid-text"}>
+                  <Grid item xs={7} className={"Grid-text"}>
                     <span style={{ marginLeft: "5px" }}>Smart Factory LLC</span>
                   </Grid>
                   <Grid
+                    item
                     xs={4}
                     style={{ padding: "10px 10px", marginRight: "10px" }}
                   >
@@ -65,10 +68,11 @@ export default function PinnedSubheaderList() {
                   </Grid>
                 </Grid>
                 <Grid container className={"container-mi"}>
-                  <Grid xs={7} className={"Grid-text"}>
+                  <Grid item xs={7} className={"Grid-text"}>
                     <span style={{ marginLeft: "5px" }}>Smart Factory LLC</span>
                   </Grid>
                   <Grid
+                    item
                     xs={4}
                     style={{ padding: "10px 10px", marginRight: "10px" }}
                   >
@@ -78,10 +82,11 @@ export default function PinnedSubheaderList() {
                   </Grid>
                 </Grid>
                 <Grid container className={"container-mi"}>
-                  <Grid xs={7} className={"Grid-text"}>
+                  <Grid item xs={7} className={"Grid-text"}>
                     <span style={{ marginLeft: "5px" }}>Smart Factory LLC</span>
                   </Grid>
                   <Grid
+                    item
                     xs={4}
                     style={{ padding: "10px 10px", marginRight: "10px" }}
                   >
@@ -91,10 +96,11 @@ export default function PinnedSubheaderList() {
                   </Grid>
                 </Grid>
                 <Grid container className={"container-mi"}>
-                  <Grid xs={7} className={"Grid-text"}>
+                  <Grid item xs={7} className={"Grid-text"}>
                     <span style={{ marginLeft: "5px" }}>Smart Factory LLC</span>
                   </Grid>
                   <Grid
+                    item
                     xs={4}
                     style={{ padding: "10px 10px", marginRight: "10px" }}
                   >

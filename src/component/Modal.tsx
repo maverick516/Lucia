@@ -43,6 +43,11 @@ export default function TransitionsModal() {
       >
         <Fade in={open}>
           <Box sx={style}>
+            <Box style={{ textAlign: "right" }}>
+              <Button style={{ justifyContent: "end" }} onClick={handleClose}>
+                ⓧ
+              </Button>
+            </Box>
             <Box className={"Buyer-Modal"}>
               <Box className={"text-Q4"}>
                 Please Write Your <br></br>Required Amount

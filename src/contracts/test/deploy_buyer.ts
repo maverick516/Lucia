@@ -24,7 +24,7 @@ async function deploy() {
   const buyer = Buyer.createForDeploy(buyerCode, initialValue, wallet.address);
   
   // exit if contract is already deployed
-  console.log("contract address:", buyer.address.toString());
+  // console.log("contract address:", buyer.address.toString());
   if (await client.isContractDeployed(buyer.address)) {
     return console.log("Buyer already deployed");
   }
@@ -41,7 +41,7 @@ async function deploy() {
   // wait until confirmed
   let currentSeqno = seqno;
   while (currentSeqno == seqno) {
-    //console.log("waiting for deploy transaction to confirm...");
+    // console.log("waiting for deploy transaction to confirm...");
     await sleep(1500);
     currentSeqno = await walletContract.getSeqno();
   }

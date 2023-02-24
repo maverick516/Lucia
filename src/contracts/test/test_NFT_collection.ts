@@ -23,7 +23,7 @@ async function main() {
   const seqno = await walletContract.getSeqno();
 
   // // open owner instance by address
-  const contractAddress = Address.parse('EQAZqZ2mO8CKIB9TCBIc6pdfItydyIvN8k6Xj58oCnxGWa9G');
+  const contractAddress = Address.parse('EQBR5rAoHodjJtMa8lZq3Dr8H-pNeROr6VkkVGC91i4Jl2v6');
   const owner = new NFT_collection(contractAddress);
   const collectionContract = client.open(owner);
 
@@ -31,8 +31,8 @@ async function main() {
   await collectionContract.sendDeployNft
                             (
                               walletSender,
-                              2,
-                              '0.1',
+                              0,
+                              '0.2',
                               '0.json',
                               wallet.address
                             );

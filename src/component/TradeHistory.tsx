@@ -27,6 +27,7 @@ export default class TradeHistory extends Component {
               style={{ justifyContent: "space-between", textAlign: "start" }}
             >
               <Grid
+                item
                 xs={12}
                 className={"TransactionTitle"}
                 style={{ padding: "0 30px" }}
@@ -34,7 +35,9 @@ export default class TradeHistory extends Component {
                 Transaction History
               </Grid>
             </Grid>
-            <Select />
+            <Box style={{ textAlign: "start", padding: "25px 18px" }}>
+              <Select />
+            </Box>
             <Box className={"Transaction-HBg"}>
               <Box className={"TransH"} style={{ margin: "0" }}>
                 <Grid
@@ -44,13 +47,13 @@ export default class TradeHistory extends Component {
                     textAlign: "start",
                   }}
                 >
-                  <Grid xs={8} className={"TransactionDeli"}>
+                  <Grid item xs={8} className={"TransactionDeli"}>
                     DAEGU LLC
                     <Grid className={"TransactionDate"}>
                       2021-10-04-10:21:00
                     </Grid>
                   </Grid>
-                  <Grid xs={3}>
+                  <Grid item xs={3}>
                     <Box className={"TransactionPrice"}>1.25LUX</Box>
                   </Grid>
                 </Grid>
